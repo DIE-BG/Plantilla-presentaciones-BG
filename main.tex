@@ -1,0 +1,104 @@
+\documentclass{beamer}
+% \documentclass[aspectratio=169]{beamer} % utilizar esta opción para relación 16:9
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{booktabs} 
+\usepackage{comment}
+\usepackage[absolute, overlay]{textpos} 
+\usepackage{pgfpages}
+\usepackage[font=footnotesize]{caption}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{transparent}
+\usepackage{textpos}
+\usepackage{tikz}
+\usepackage{lipsum}
+
+% Definición de colores
+\definecolor{gold}{RGB}{254, 206, 0}
+\definecolor{bgblue}{RGB}{0, 40, 89}
+
+% Configuración de tema y colores en las diapositivas
+\usetheme{Madrid}
+\setbeamercolor{title in head/foot}{bg=bgblue}
+\setbeamercolor{author in head/foot}{bg=bgblue}
+\usecolortheme[named=bgblue]{structure}
+
+% Título y datos de la presentación
+\title[Título corto]{Título de la presentación}
+\subtitle{Subtítulo}
+\institute[]{Banco de Guatemala\\Departamento de Investigaciones Económicas}
+\titlegraphic{\includegraphics[height=2.5cm]{banguat.png}}
+\author[Rodrigo Chang (BG)]{Rodrigo Chang}
+\date{\today}
+
+% Configuración de símbolos de navegación
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+}
+
+% Configuración de logo
+\logo{\transparent{0.4}\includegraphics[scale=0.1]{banguat.png}}
+
+% Configuración de bibliografía
+\usepackage[backend=biber,style=authoryear,sorting=nyt]{biblatex}
+% Agregar la coma y espacio en las citas con paréntesis (Autor, año)
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+% Configuración de "et al." cuando son más autores
+\DefineBibliographyStrings{spanish}{andothers={et al.}}
+
+% Archivo con referencias bibliográficas
+\addbibresource{references.bib}
+
+
+\begin{document}
+
+% Diapositiva de título
+\begin{frame}[plain]
+\maketitle
+\end{frame}
+
+
+% Diapositiva de contenidos
+\begin{frame}{Contenido}
+\tableofcontents
+\end{frame}
+
+% Podemos utilizar secciones para separar el contenido de la presentación
+\section{Introducción}
+\begin{frame}
+   En esta presentación utilizamos \textcite{degroot2012probability} para obtener ... 
+\end{frame}
+
+\section{Revisión de literatura}
+\begin{frame}{Revisión de literatura}
+    \lipsum[1]
+\end{frame}
+
+\section{Metodología}
+\begin{frame}{Metodología}
+    \lipsum[1]
+\end{frame}
+
+\section{Resultados}
+\begin{frame}{Resultados}
+    \lipsum[1]
+\end{frame}
+
+\section{Conclusiones}
+\begin{frame}{Resultados}
+    \begin{itemize}
+        \item 1
+        \item 2
+        \item 3
+    \end{itemize}
+\end{frame}
+    
+\section{References}
+\begin{frame}[allowframebreaks]
+    \printbibliography  
+\end{frame}
+
+
+\end{document}
